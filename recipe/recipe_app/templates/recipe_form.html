@@ -1,0 +1,14 @@
+<h1>
+    {% if object %}
+        Edit "{{ object.title }}"
+    {% else %}
+        Add a New Recipe
+    {% endif %}
+</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %} <!-- Required for security -->
+    {{ form.as_p }}   <!-- This renders the form fields -->
+    <button type="submit">Save Recipe</button>
+</form>
+<a href="{% url 'recipe_list' %}">Cancel</a>

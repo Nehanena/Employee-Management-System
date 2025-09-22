@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>IT Company - Employee Management System</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="IT Company Website Template" name="keywords">
+        <meta content="IT Company Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> 
+
+        <!-- Libraries CSS -->
+        <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+        <!-- Main Stylesheet -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Nav Start -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a href="{% url 'employee_app:index' %}" class="navbar-brand">
+        <img src="{% static 'img/logo.png' %}" alt="Logo">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav ml-auto">
+            <a href="{% url 'employee_app:index' %}" class="nav-item nav-link active">Home</a>
+            <a href="#employee-management" class="nav-item nav-link">Employee Management</a>
+            <a href="#about" class="nav-item nav-link">About</a>
+            <a href="#services" class="nav-item nav-link">Service</a>
+            <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+            <a href="#pricing" class="nav-item nav-link">Pricing</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                <div class="dropdown-menu">
+                    <a href="#skills" class="dropdown-item">Skills</a>
+                    <a href="#team" class="dropdown-item">Team Members</a>
+                    <a href="#reviews" class="dropdown-item">Reviews</a>
+                    <a href="#clients" class="dropdown-item">Clients</a>
+                </div>
+            </div>
+            <a href="#contact" class="nav-item nav-link">Contact</a>
+        </div>
+    </div>
+</nav>
+<!-- Nav End -->
+        
+
+        <!-- Header Start-->
+        <div class="header">
+            <div id="header-slider" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#header-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#header-slider" data-slide-to="1"></li>
+                    <li data-target="#header-slider" data-slide-to="2"></li>
+                </ul>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="carousel-content">
+                                    <h2>Employee Management System</h2>
+                                    <p>Efficiently manage your workforce with our comprehensive employee management solution</p>
+                                    <a class="btn" href="#employee-management">Get Started</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="carousel-img">
+                                    <img src="{% static 'img/slider-1.png' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="carousel-content">
+                                    <h2>Track Employee Performance</h2>
+                                    <p>Monitor salaries, bonuses, and performance grades all in one place</p>
+                                    <a class="btn" href="#employee-management">Explore Features</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="carousel-img">
+                                    <img src="{% static 'img/slider-2.png' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="carousel-content">
+                                    <h2>Comprehensive Reporting</h2>
+                                    <p>Generate detailed reports on employee compensation and performance metrics</p>
+                                    <a class="btn" href="#employee-management">View Reports</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="carousel-img">
+                                    <img src="{% static 'img/slider-3.png' %}" alt="Images">
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#header-slider" data-slide="prev">
+                    <i class="ion-ios-arrow-back"></i>
+                </a>
+                <a class="carousel-control-next" href="#header-slider" data-slide="next">
+                    <i class="ion-ios-arrow-forward"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Header End-->
+
+        <!-- Employee Management System Start -->
+<div id="employee-management" class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>Employee Management System</h2>
+            <p>
+                Manage your employee records with our system
+            </p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="ion-ios-person-add" style="font-size: 48px; color: #4e73df;"></i>
+                        <h4 class="card-title mt-3">Add Employee</h4>
+                        <p class="card-text">Create new employee records with all necessary details</p>
+                        <a href="{% url 'employee_app:create_employee' %}" class="btn btn-primary">Add New</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="ion-ios-search" style="font-size: 48px; color: #1cc88a;"></i>
+                        <h4 class="card-title mt-3">Search Employee</h4>
+                        <p class="card-text">Find employee details by searching with Employee ID</p>
+                        <a href="{% url 'employee_app:search_employee' %}" class="btn btn-success">Search</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card text-center h-100">
+                    <div class="card-body">
+                        <i class="ion-ios-list" style="font-size: 48px; color: #36b9cc;"></i>
+                        <h4 class="card-title mt-3">View All Employees</h4>
+                        <p class="card-text">Browse through all employee records in the system</p>
+                        <a href="{% url 'employee_app:employee_list' %}" class="btn btn-info">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Search Form -->
+        <div class="row mt-5">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Quick Employee Search</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="{% url 'employee_app:search_employee' %}">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="employee_id" placeholder="Enter Employee ID" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Employee Management System End -->
+
+                <!-- How it Works Section -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="section-header">
+                            <h3>How It Works</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="ion-ios-create"></i>
+                            </div>
+                            <h4>Create Records</h4>
+                            <p>Add new employees with details like ID, name, department, salary, and bonus percentage.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="ion-ios-calculator"></i>
+                            </div>
+                            <h4>Automatic Calculations</h4>
+                            <p>System automatically calculates total annual salary and performance grade based on your inputs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="ion-ios-stats"></i>
+                            </div>
+                            <h4>Performance Tracking</h4>
+                            <p>Track employee performance through our grading system based on total annual compensation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Employee Management System End -->
+
+        <!-- About Start-->
+        <div class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Us</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet
+                    </p>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="about-img">
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Welcome to Our Site</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="about-img">
+                            <img src="{% static 'img/about-story.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Our Story</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-img">
+                            <img src="{% static 'img/about-goal.jpg' %}" alt="" class="img-fluid">
+                        </div>
+                        <div class="about-content">
+                            <h2>Our Goal</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum rutrum ligula. Integer ac porttitor mi. In finibus vehicula aliquet. Vestibulum et velit placerat pretium lorem
+                            </p>
+                            <a class="btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- The rest of your existing content remains the same -->
+        <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Services</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac lacus eget nunc imperdiet 
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-desktop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Web Design</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="ion-ios-laptop"></i>
+                            </div>
+                            <div class="service-detail">
+                                <h4><a href="">Web Development</a></h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Other service items remain the same -->
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>About Us</h4>
+                            <ul>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#">About us</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#">Our services</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#">Terms & condition</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#employee-management">Employee Management</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="{% url 'employee_app:create_employee' %}">Add Employee</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="{% url 'employee_app:employee_list' %}">View Employees</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="{% url 'employee_app:search_employee' %}">Search Employee</a></li>
+                                <li><i class="ion-ios-arrow-forward"></i> <a href="#">Phasellus leo</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h4>Contact Us</h4>
+                            <p>
+                                1300  Center Avenue<br>
+                                Fresno, California<br>
+                                United States <br>
+                                <strong>Phone:</strong> +123-456-7890<br>
+                                <strong>Email:</strong> info@example.com<br>
+                            </p>
+
+                            <div class="social-links">
+                                <a href="#"><i class="ion-logo-twitter"></i></a>
+                                <a href="#"><i class="ion-logo-facebook"></i></a>
+                                <a href="#"><i class="ion-logo-linkedin"></i></a>
+                                <a href="#"><i class="ion-logo-instagram"></i></a>
+                                <a href="#"><i class="ion-logo-googleplus"></i></a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-newsletter">
+                            <h4>Subscription</h4>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+                            <form action="" method="post">
+                                <input type="email" name="email"><input type="submit"  value="Subscribe">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 copyright">
+                        Copyright &copy; 2025 <a href="">Employee Management System</a>. All Rights Reserved
+                    </div>
+                    <div class="col-md-6 credit">
+                        Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+
+        <!-- Libraries JS -->
+        <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+        <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+        <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+        <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+        <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+        <!-- Main Javascript -->
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+</html>

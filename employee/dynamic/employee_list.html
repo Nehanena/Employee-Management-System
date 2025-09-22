@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="{% url 'employee_app:index' %}" class="navbar-brand">Home</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Employee List</h2>
+        {% if employees %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Company</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employees %}
+                    <tr>
+                        <td>{{ employee.employee_id }}</td>
+                        <td>{{ employee.name }}</td>
+                        <td>{{ employee.department }}</td>
+                        <td>{{ employee.company_name }}</td>
+                        <td>
+                            <a href="{% url 'employee_app:employee_detail' employee.employee_id %}" class="btn btn-info btn-sm">View</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No employees found.</p>
+        {% endif %}
+        <a href="{% url 'employee_app:create_employee' %}" class="btn btn-primary">Add New Employee</a>
+    </div>
+</body>
+</html>

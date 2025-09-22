@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Employee</title>
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="{% url 'employee_app:index' %}" class="navbar-brand">Home</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Search Employee by ID</h2>
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="employee_id">Employee ID:</label>
+                <input type="text" class="form-control" id="employee_id" name="employee_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="{% url 'employee_app:employee_list' %}" class="btn btn-secondary">View All Employees</a>
+        </form>
+    </div>
+</body>
+</html>

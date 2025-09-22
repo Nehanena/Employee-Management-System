@@ -1,0 +1,8 @@
+<h1>{% if object %}Edit Instruction{% else %}Add New Instruction{% endif %}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'cooking_instruction_list' %}">Cancel</a>
